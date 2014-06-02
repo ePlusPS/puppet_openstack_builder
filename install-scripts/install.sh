@@ -124,10 +124,25 @@ nova::compute::vncserver_proxyclient_address: "${build_server_ip}"
 
 quantum::agents::ovs::local_ip: "%{ipaddress}"
 neutron::agents::ovs::local_ip: "%{ipaddress}"
+
+# TEMPORARY:
+openstack_release: icehouse-proposed
+
+# Specialised network config for linuxbridge + vxlan + provider networks
+# SET EARLIER, AND ELSEWHERE: network_plugin: ml2_lb_vxlan
+# SET EARLIER, AND ELSEWHERE: tenant_network_type: vxlan
+vni_ranges:
+ - 100:10000
+vxlan_group: 229.1.2.3
+flat_networks:
+ - physnet1
+physical_interface_mappings:
+ - physnet1:eth3
 EOF
 
   # disable cobbler for AIO
-  sed -i -e "s/- coi::profiles::cobbler_server/#- coi::profiles::cobbler_server/" /root/puppet_openstack_builder/data/class_groups/build.yaml
+  # TODO: why?
+  #sed -i -e "s/- coi::profiles::cobbler_server/#- coi::profiles::cobbler_server/" /root/puppet_openstack_builder/data/class_groups/build.yaml
   fi
 
   cd puppet_openstack_builder
@@ -147,6 +162,7 @@ EOF
 
   cp -R ~/puppet_openstack_builder/data /etc/puppet/
   cp -R ~/puppet_openstack_builder/manifests /etc/puppet/
+  cp -R ~/puppet_openstack_builder/modules /etc/puppet/
   cp -R ~/puppet_openstack_builder/templates /etc/puppet/
   if [ -d ~/puppet_openstack_builder/scripts ] ; then
     cp -R ~/puppet_openstack_builder/scripts /etc/puppet/

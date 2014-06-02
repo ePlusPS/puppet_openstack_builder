@@ -1,0 +1,6 @@
+neutron::core_plugin: neutron.plugins.ml2.plugin.Ml2Plugin
+
+nova::compute::neutron::libvirt_vif_driver: "nova.virt.libvirt.vif.LibvirtGenericVIFDriver"
+neutron::agents::l3::interface_driver: neutron.agent.linux.interface.BridgeInterfaceDriver
+neutron::agents::dhcp::interface_driver: neutron.agent.linux.interface.BridgeInterfaceDriver
+

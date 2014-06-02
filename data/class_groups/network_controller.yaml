@@ -8,8 +8,7 @@ classes:
   - "%{network_service}::agents::lbaas"
   - "%{network_service}::agents::vpnaas"
   - "%{network_service}::agents::dhcp"
-  - "%{network_service}::agents::%{network_plugin}"
   - "%{network_service}::services::fwaas"
-  - "%{network_service}::plugins::%{network_plugin}"
+  - vxlan_lb::ml2
 #  - "coe::nexus"
 #  - "neutron::plugins::cisco"

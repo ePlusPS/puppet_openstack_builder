@@ -8,7 +8,7 @@ verbose:    false
 # Set this to 'Ubuntu' if using scenariobuilder, otherwise
 # Facter will get very confused.
 operatingsystem: ubuntu
-scenario: 2_role
+scenario: all_in_one
 
 # Additional Config available for use by scenariobuilder during
 # the bootstrap process.

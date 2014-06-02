@@ -124,6 +124,7 @@ controller_internal_address:
   - neutron::keystone::auth::internal_address
   - openstack::auth_file::controller_node
   - postgresql::config::listen_addresses
+  #- mysql::server::bind_address
   # deprecated past 0.x
   - mysql::config::bind_address
   - quantum::agents::metadata::metadata_ip
@@ -198,6 +199,7 @@ swift_local_net_ip:
 "%{db_type}://%{network_service}:%{network_db_password}@%{controller_internal_address}/%{network_service}":
   - quantum::plugins::ovs::sql_connection
   - quantum::plugins::linuxbridge::sql_connection
+  - vxlan_lb::ml2::sql_connection
   - neutron::server::database_connection
 "%{ceilometer_db_type}://ceilometer:%{ceilometer_db_password}@%{controller_internal_address}/ceilometer":
 # NOTE: Workaround for connection issues with mongo
