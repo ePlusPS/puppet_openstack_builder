@@ -20,7 +20,7 @@ log_host=192.168.242.100 \
 netcfg/choose_interface=auto"
 
 node-global:
-  power_type: "ipmitool"
+  power_type: "cisco_ucs"
   power_user: "admin"
   power_pass: "password"
   kickstart: "/etc/cobbler/preseed/cisco-preseed"

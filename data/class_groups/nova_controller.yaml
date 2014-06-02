@@ -7,5 +7,4 @@ classes:
   - nova::cert
   - nova::consoleauth
   - nova::conductor
-  - "nova::network::%{network_service}"
   - nova::vncproxy

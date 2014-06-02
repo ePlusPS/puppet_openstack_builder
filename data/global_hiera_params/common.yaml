@@ -11,11 +11,17 @@ compute_type: libvirt
 # networking options
 network_service: neutron
 # supports linuxbridge and ovs
-network_plugin: ovs
+#network_plugin: ovs
 # supports single-flat, provider-router, and per-tenant-router
 network_type: per-tenant-router
 # supports gre or vlan
-tenant_network_type: gre
+#tenant_network_type: gre
 enable_ha: false
 
 install_tempest: false
+
+
+# OVERRIDES:
+
+tenant_network_type: vxlan
+network_plugin: ml2_lb_vxlan

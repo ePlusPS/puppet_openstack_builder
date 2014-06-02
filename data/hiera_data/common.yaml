@@ -20,10 +20,10 @@ enabled_services:
   # 'neutron', 'quantum', or "%{network_service} to use
   # the value configured in global_hiera_params/common.yaml
   - "%{network_service}"
-  - swift
+  #- swift
   # NOTE: if using mongodb, comment this line out so mysql is not
   # redundantly included
-  - ceilometer
+  #- ceilometer
 
 # Hosts to be allowed access to the backend database used to
 # persist data for OpenStack services (e.g. MySQL or similar).

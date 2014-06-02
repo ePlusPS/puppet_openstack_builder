@@ -5,9 +5,9 @@ roles:
   all_in_one:
     classes:
       - coe::base
-      - cinder::setup_test_volume
-      - openstack::swift::proxy
-      - openstack::swift::storage-node
+      #- cinder::setup_test_volume
+      #- openstack::swift::proxy
+      #- openstack::swift::storage-node
       - "nova::%{rpc_type}"
     class_groups:
       - build
@@ -16,19 +16,19 @@ roles:
       - cinder_controller
       - nova_controller
       - horizon
-      - ceilometer_controller
-      - heat_all
+      #- ceilometer_controller
+      #- heat_all
       - "%{db_type}_database"
       - nova_compute
       - cinder_volume
-      - ceilometer_compute
+      #- ceilometer_compute
       - network_controller
       - test_file
   compute:
     classes:
       - coe::base
-      - cinder::setup_test_volume
+      #- cinder::setup_test_volume
     class_groups:
       - nova_compute
       - cinder_volume
-      - ceilometer_compute
+      #- ceilometer_compute

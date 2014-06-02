@@ -33,3 +33,4 @@ control.+: control
 node01: compressed_ha
 node02: compressed_ha
 node03: compressed_ha
+bootserver: all_in_one

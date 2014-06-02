@@ -1,0 +1,15 @@
+external_interface:
+ - vxlan_lb::ml2_agent::external_interface
+internal_ip:
+ - vxlan_lb::ml2::local_ip
+ - vxlan_lb::ml2_agent::local_ip
+vni_ranges:
+ - vxlan_lb::ml2::vni_ranges
+ - vxlan_lb::ml2_agent::vni_ranges
+vxlan_group:
+ - vxlan_lb::ml2::vxlan_group
+ - vxlan_lb::ml2_agent::vxlan_group
+flat_networks:
+ - vxlan_lb::ml2::flat_networks
+physical_interface_mappings:
+ - vxlan_lb::ml2_agent::physical_interface_mappings
