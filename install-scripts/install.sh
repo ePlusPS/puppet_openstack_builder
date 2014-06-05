@@ -137,7 +137,7 @@ vxlan_group: 229.1.2.3
 flat_networks:
  - physnet1
 physical_interface_mappings:
- - physnet1:eth3
+ - physnet1:${external_interface}
 EOF
 
   # disable cobbler for AIO
