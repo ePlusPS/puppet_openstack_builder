@@ -12,7 +12,7 @@ export FACTER_vendorpuppet=vendor
 # to install puppet modules using librarian and git
 export install_type=deb
 
-REPO_LOC={$repo_location:-openstack-repo.cisco.com}
+REPO_LOC=${repo_location:-openstack-repo.cisco.com}
 # Add Cisco repo and puppet repo
 cat > /etc/apt/sources.list.d/cisco-openstack-mirror_icehouse.list<<EOF
 # cisco-openstack-mirror_icehouse
