@@ -95,7 +95,6 @@ mod 'stephenjohrnson/puppet',
 openstack_repo_prefix = "#{base_url}/#{openstack_module_account}/puppet-"
 
 [
-  'openstack',
   'cinder',
   'glance',
   'keystone',
@@ -103,7 +102,6 @@ openstack_repo_prefix = "#{base_url}/#{openstack_module_account}/puppet-"
   'nova',
   neutron_name,
   'swift',
-  'tempest',
   'heat',
 ].each do |module_name|
   mod "stackforge/#{module_name}",
@@ -113,6 +111,7 @@ end
 
 # stackforge module with no grizzly release
 [
+  'tempest',
   'ceilometer',
   'vswitch'
 ].each do |module_name|
