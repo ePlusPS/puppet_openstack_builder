@@ -406,12 +406,27 @@ mysql_default_collation:
 #  - coe::nexus::nexus_credentials
 #nexus_config:
 #  - coe::nexus::nexus_config
+
+# map time server for using during install by cobbler
+cobbler_node_ip:
+  - cobbler::ntp_server
+  - cobbler::ubuntu::preseed::ntp_server
 # Cobbler install drive
 install_drive:
   - coi::profiles::cobbler_server::diskpart
   - cobbler::diskpart
   - cobbler::ubuntu::preseed::diskpart
+# expert_disk mode in Ubuntu installs using Cobbler
+expert_disk:
+  - coi::profiles::cobbler_server::expert_disk
+  - cobbler::expert_disk
+  - cobbler::ubuntu::preseed::expert_disk
 packages:
   - coi::profiles::cobbler_server::packages
   - cobbler::packages
   - cobbler::ubuntu::preseed::packages
+enable_promisc_vrrp:
+  - cobbler::ubuntu::preseed::enable_promisc_vrrp
+disableml2:
+  - neutron::server::disableml2
+  - neutron::agents::ovs::disableml2

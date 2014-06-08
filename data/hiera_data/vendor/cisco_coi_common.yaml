@@ -29,7 +29,7 @@ openstack_repo_location: 'http://openstack-repo.cisco.com/openstack/cisco'
 supplemental_repo: false
 puppet_repo_location: 'http://openstack-repo.cisco.com/openstack/puppet'
 puppet_repo: 'cisco_repo'
-pocket: ''
+pocket: '/snapshots/i.0'
 
 # Use the latest Puppet packages from the Cisco COI repos
 puppet::master::version: latest

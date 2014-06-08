@@ -59,7 +59,15 @@ build-server:
   # by default new added nodes are set to PXE boot
   # uncomment this line to force the added node to not PXE boot
   #netboot_enabled: "0"
+  #
+  # power_address is the CIMC or UCS-M instance managing the server
+  # For UCS-M installations using suborganizations, specify the
+  # suborg after the address, such as:
+  #   power_address: "192.168.2.101:org-CI"
   power_address: "192.168.2.101"
+  # For UCS-M, a power_id argument is also needed specifying the profile
+  # name of the instance in UCS-M
+  # power_id: "Build-Server.C1B2"
   profile: "trusty-x86_64"
   interfaces:
     eth0:

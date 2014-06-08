@@ -7,6 +7,11 @@
 #proxy: 'http://proxy-server.domain.com:8080'
 
 #### Disk partitioning options ###########
+# expert_disk is needed for fine-grained configuration of drive layout
+# during Cobbler-driven installs. It is also required when installing
+# on large drives that require GPT
+expert_disk: true
+
 # The /var directory is where logfiles and instance data are stored
 # on disk.  If you wish to have /var on it's own partition (considered
 # a best practice), set enable_var to true.
@@ -158,7 +163,7 @@ ucsm_port: 443
 
 # The name of the hard drive on which Cobbler should install the operating
 # system.
-install_drive: [/dev/sda]
+install_drive: /dev/sda
 
 # Set to 1 to enable ipv6 route advertisement.  Otherwise, comment out
 # this line or set it to 0.
@@ -167,6 +172,11 @@ install_drive: [/dev/sda]
 # Uncomment this line and set it to true if you want to use bonded
 # ethernet interfaces.
 #interface_bonding: true
+
+# Use the following directive to enable promisc mode in cobbler preseed
+# This may be needed in some HA installs to ensure that VRRP advertisements 
+# to work.
+enable_promisc_vrrp: false
 
 # The IP address on which vncserver proxyclient should listen.
 # This should generally be an address that is accessible via
@@ -401,6 +411,11 @@ service_plugins:
 
 # Set the interface driver
 interface_driver: 'neutron.agent.linux.interface.OVSInterfaceDriver'
+
+# ml2 hack. Current packages have ml2 enabled, even if you do not
+# use the driver. This param corrects the configuration files.
+# This is enabled by default. If you are using ml2, change to false.
+disableml2: true
 
 # Set the external network bridge.
 # NOTE: If you change this, make sure to update the

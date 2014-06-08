@@ -16,8 +16,8 @@ REPO_LOC=${repo_location:-openstack-repo.cisco.com}
 # Add Cisco repo and puppet repo
 cat > /etc/apt/sources.list.d/cisco-openstack-mirror_icehouse.list<<EOF
 # cisco-openstack-mirror_icehouse
-deb http://$REPO_LOC/openstack/cisco icehouse-proposed main
-deb-src http://$REPO_LOC/openstack/cisco icehouse-proposed main
+deb http://$REPO_LOC/openstack/cisco icehouse/snapshots/i.0 main
+deb-src http://$REPO_LOC/openstack/cisco icehouse/snapshots/i.0 main
 EOF
 
 cat > /etc/apt/sources.list.d/cisco-openstack-puppet_icehouse.list<<EOF
