@@ -22,8 +22,8 @@ EOF
 
 cat > /etc/apt/sources.list.d/cisco-openstack-puppet_icehouse.list<<EOF
 # cisco packaged puppet modules
-deb http://$REPO_LOC/openstack/puppet icehouse-proposed main
-deb-src http://$REPO_LOC/openstack/puppet icehouse-proposed main
+deb http://$REPO_LOC/openstack/puppet icehouse main
+deb-src http://$REPO_LOC/openstack/puppet icehouse main
 EOF
 
 # Add the signing key for the Cisco OpenStack repo
