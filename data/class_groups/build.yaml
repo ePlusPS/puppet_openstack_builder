@@ -1,6 +1,8 @@
 classes:
   - apache
   - apache::mod::proxy
+  - apache::mod::wsgi
+  - apache::mod::proxy_http
   - coi::profiles::cobbler_server
   - coi::profiles::cache_server
   - coi::profiles::puppet::master
