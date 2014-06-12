@@ -126,7 +126,7 @@ quantum::agents::ovs::local_ip: "%{ipaddress}"
 neutron::agents::ovs::local_ip: "%{ipaddress}"
 
 # TEMPORARY:
-openstack_release: icehouse-proposed
+openstack_release: icehouse
 
 # Specialised network config for linuxbridge + vxlan + provider networks
 # SET EARLIER, AND ELSEWHERE: network_plugin: ml2_lb_vxlan
